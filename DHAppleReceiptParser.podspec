@@ -14,7 +14,7 @@ https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreRec
                    DESC
 
   s.homepage     = "https://github.com/DarkHorseComics/DHAppleReceiptParser"
-  s.license      = ""
+  s.license      = "MIT"
   s.author       = { "Chase Caster" => "chasec@darkhorse.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/DarkHorseComics/DHAppleReceiptParser.git", :tag => "1.0.0" }

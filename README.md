@@ -1,5 +1,6 @@
 A library to parse the apple receipt file in iOS 7 as defined in the [apple developer documentation]
-(https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateLocally.html#//apple_ref/doc/uid/TP40010573-CH1-SW3)
+(https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateLocally.html#//apple_ref/doc/uid/TP40010573-CH1-SW3).  
+
 This library does *not* handle validation -- by Apple's design, it
 is necessary to provide your own validation code for security reasons.  
 
