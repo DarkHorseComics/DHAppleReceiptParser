@@ -6,11 +6,9 @@ is necessary to provide your own validation code for security reasons.
 This library *does* make it easier to fetch in-app purchase data stored
 on the device, which could be used for server side receipt validation.  
 
-Important note: this library requires OpenSSL.  To install via cocoapods, add this line to your Podfile:
-pod 'OpenSSL', :podspec => 'https://raw.github.com/yaakov-h/OpenSSL/master/OpenSSL.podspec'
-
 To get the parsed system receipt:
 
+```
 #import "DHAppStoreReceipt.h"
 
 // This function could be used to get the recipt payload for server side validation
@@ -20,4 +18,5 @@ To get the parsed system receipt:
     DHInAppReceipt *inAppReceipt = [receipt receiptForProductId:productIdentifier];
     return inAppReceipt.receiptData;
 }
+```
 
