@@ -17,9 +17,8 @@ https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreRec
   s.license      = 'MIT'
   s.author       = { "Chase Caster" => "chasec@darkhorse.com" }
   s.platform     = :ios, '7.0'
-  s.source       = { :git => "https://github.com/DarkHorseComics/DHAppleReceiptParser", :tag => "1.0" }
+  s.source       = { :git => "https://github.com/DarkHorseComics/DHAppleReceiptParser", :tag => '1.0'}
   s.source_files  = '*.{h,m}', 'asn1_parser/*{h,c}'
   s.public_header_files = 'DHAppStoreReceipt.h'
-  s.dependency 'OpenSSL', :podspec => 'https://raw.github.com/yaakov-h/OpenSSL/master/OpenSSL.podspec'
 
 end
