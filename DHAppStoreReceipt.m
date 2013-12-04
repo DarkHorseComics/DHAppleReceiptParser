@@ -173,6 +173,10 @@
     return [inAppReceiptsByProductId allValues];
 }
 
+- (NSString *)originalApplicationVersion {
+    return [[self attributeByType:DH_ATTRIBUTE_TYPE_ORIGINAL_APPLICATION_VERSION] stringValue];
+}
+
 @end
 
 @implementation DHInAppReceipt
