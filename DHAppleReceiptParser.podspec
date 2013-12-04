@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DHAppleReceiptParser"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "Parser for the receipt file available in iOS 7."
   s.description  = <<-DESC
                    A library to parse the apple receipt file in iOS 7 as defined here:
