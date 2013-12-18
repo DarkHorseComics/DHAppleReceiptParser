@@ -17,6 +17,7 @@ https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreRec
   s.license      = "MIT"
   s.author       = { "Chase Caster" => "chasec@darkhorse.com" }
   s.platform     = :ios, "7.0"
+  s.requires_arc = true
   s.source       = { :git => "https://github.com/DarkHorseComics/DHAppleReceiptParser.git", :tag => "1.0.0" }
   s.source_files  = "*.{h,m}", "asn1_parser/*{h,c}"
   s.public_header_files = "DHAppStoreReceipt.h"
