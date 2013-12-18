@@ -19,8 +19,14 @@ https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreRec
   s.platform     = :ios, "7.0"
   s.requires_arc = true
   s.source       = { :git => "https://github.com/DarkHorseComics/DHAppleReceiptParser.git", :tag => "1.0.0" }
-  s.source_files  = "*.{h,m}", "asn1_parser/*{h,c}"
+  
+  s.source_files = "*.{h,m}", "asn1_parser/*.{h,c}", "include/openssl/*.h"
   s.public_header_files = "DHAppStoreReceipt.h"
-  s.dependency "OpenSSL", "~> 1.0"
+  s.preserve_paths = 'lib/libcrypto.a'
+  s.libraries    = "crypto"
+  s.xcconfig     = {
+    'LIBRARY_SEARCH_PATHS' => '"/code/DHAppleReceiptParser/lib/"',
+    'HEADER_SEARCH_PATHS' => '"/code/DHAppleReceiptParser/include/"'
+  }
 
 end

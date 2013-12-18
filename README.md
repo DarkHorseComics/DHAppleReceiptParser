@@ -21,3 +21,4 @@ To get the parsed system receipt:
 }
 ```
 
+OpenSSL is included as built by https://github.com/st3fan/ios-openssl
