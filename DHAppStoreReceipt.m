@@ -83,7 +83,7 @@
     size_t len = (size_t)[receiptData length];
     Payload_t *payload = NULL;
 
-    asn_dec_rval_t rval = asn_DEF_Payload.ber_decoder(NULL, &asn_DEF_Payload, (void **)&payload, data, len, 0);
+    asn_DEF_Payload.ber_decoder(NULL, &asn_DEF_Payload, (void **)&payload, data, len, 0);
     for (size_t i = 0; i < payload->list.count; i++) {
         ReceiptAttribute_t *receiptAttribute = payload->list.array[i];
         OCTET_STRING_t *valueOctet = &receiptAttribute->value;
