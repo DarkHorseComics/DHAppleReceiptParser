@@ -106,8 +106,7 @@
 }
 
 + (DHAppStoreReceipt *)mainBundleReceipt {
-    DHAppStoreReceipt *receipt = [[DHAppStoreReceipt alloc] initWithURL:[[NSBundle mainBundle] appStoreReceiptURL]];
-    return receipt;
+    return [[DHAppStoreReceipt alloc] initWithURL:[[NSBundle mainBundle] appStoreReceiptURL]];
 }
 
 - (id)initWithURL:(NSURL *)receiptURL {
@@ -115,6 +114,10 @@
     if (self) {
         NSData *receiptData = [NSData dataWithContentsOfURL:receiptURL];
         receiptData = [self decodePKCS7:receiptData];
+        
+        if (!receiptData) {
+            return nil;
+        }
 
         NSMutableDictionary *mutableAttributes = [NSMutableDictionary dictionary];
         NSMutableDictionary *mutableInAppReceipts = [NSMutableDictionary dictionary];
@@ -135,6 +138,10 @@
 - (NSData *)decodePKCS7:(NSData *)data {
     const unsigned char *bytes = [data bytes];
     PKCS7 *p7 = d2i_PKCS7(NULL, &bytes, [data length]);
+    
+    if (p7 == NULL) {
+        return nil;
+    }
 
     if (!PKCS7_type_is_signed(p7)) {
         PKCS7_free(p7);
@@ -171,6 +178,10 @@
 
 - (NSArray *)inAppReceipts {
     return [inAppReceiptsByProductId allValues];
+}
+
+- (NSString *)originalApplicationVersion {
+    return [[self attributeByType:DH_ATTRIBUTE_TYPE_ORIGINAL_APPLICATION_VERSION] stringValue];
 }
 
 @end

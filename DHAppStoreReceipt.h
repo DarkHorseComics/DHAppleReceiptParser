@@ -14,6 +14,7 @@ typedef enum {
     DH_ATTRIBUTE_TYPE_OPAQUE_VALUE = 4,
     DH_ATTRIBUTE_TYPE_SHA_HASH = 5,
     DH_ATTRIBUTE_TYPE_IN_APP_RECEIPT = 17,
+    DH_ATTRIBUTE_TYPE_ORIGINAL_APPLICATION_VERSION = 19,
     DH_ATTRIBUTE_IN_APP_TYPE_QUANTITY = 1701,
     DH_ATTRIBUTE_IN_APP_TYPE_PRODUCT_ID = 1702,
     DH_ATTRIBUTE_IN_APP_TYPE_TRANSACTION_ID = 1703,
@@ -55,6 +56,7 @@ typedef enum {
 @property(readonly) NSData *opaqueValue;
 @property(readonly) NSData *SHA1Hash;
 @property(readonly) NSArray *inAppReceipts;
+@property(readonly) NSString *originalApplicationVersion;
 
 @end
 
